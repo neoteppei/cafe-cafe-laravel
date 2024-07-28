@@ -20,7 +20,7 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:10',
             'kana' => 'required|string|max:10',
-            'tel' => 'required|string|max:20|regex:/^[0-9]+$/',
+            'tel' => 'nullable|string|max:20|regex:/^0[0-9]+$/',
             'email' => 'required|email',
             'body' => 'required|string',
         ]);
@@ -77,7 +77,7 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:10',
             'kana' => 'required|string|max:10',
-            'tel' => 'required|string|max:20|regex:/^[0-9]+$/',
+            'tel' => 'nullable|string|max:20|regex:/^0[0-9]+$/',
             'email' => 'required|email',
             'body' => 'required|string',
         ]);
